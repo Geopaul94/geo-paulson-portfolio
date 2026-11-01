@@ -1,29 +1,36 @@
 # Geo Paulson portfolio
 
-A responsive, dependency-free static website. All deployable files are in `dist/`.
+Responsive personal portfolio with dark/light themes, project highlights and downloadable CVs. Plain HTML, CSS and JavaScript; no dependencies or build step.
 
-## Preview
+## Run locally
 
-From this directory, run `python3 -m http.server 8765 --directory dist`, then open http://localhost:8765. Or open `dist/index.html` directly for an offline preview.
+Clone this repository, enter its directory, and run:
 
-## Deploy
+```sh
+python3 -m http.server 8765
+```
 
-Upload the contents of `dist/` to any static host (GitHub Pages, Netlify, Cloudflare Pages). No build command, package install or environment variables are required. For hosts with an output directory setting, choose `dist`.
+Open http://localhost:8765/. All site files are in the repository root.
 
-For GitHub Pages, place the contents of `dist` in the publishing branch root and choose that branch in repository Settings → Pages. Relative asset paths support project subdirectories.
+## Publish
 
-The local Sites hosting configuration is excluded from this repository; it is not required by other hosts.
+In GitHub Settings → Pages, choose Deploy from a branch, main, / (root), then Save. Once deployment succeeds, visit https://geopaul94.github.io/geo-paulson-portfolio/ . Subsequent commits to main trigger redeployment.
 
-## Edit
+## Files
 
-Content and links: `dist/index.html`. Design and responsive rules: `dist/styles.css`. Theme preference: `dist/script.js`. Both original CVs: `dist/assets/`.
+- index.html: content, metadata, links and anchors.
+- styles.css: responsive design and themes.
+- script.js: theme preference and active navigation.
+- favicon.svg: site icon.
+- Both Geo_Paulson_*_CV.pdf files: original CVs and downloads.
+- AGENTS.md: project context, approved design, source caveats and validation instructions for AI coding tools. Read it before making changes.
 
-## Sources and verification
+Keep file links relative to the repository root. There are no dist/ or assets/ directories.
 
-Content is based on the two supplied Geo Paulson CVs. The Software Engineer CV provides the specific profile and app URLs; its personal email and phone are retained for this personal portfolio. Education and employment status are reproduced as stated in those CVs, not independently confirmed.
+## Validation
 
-The reference https://amkrys.github.io/#about was inspected for section hierarchy, navigation and typography. The revised design follows the reference’s dark/purple palette, pill navigation, numbered sections, biography/facts layout and text-led project cards. All content and code are tailored to Geo. A personal portrait has not yet been supplied; the hero uses initials.
+Run `node --check script.js`. Check local links, section navigation, both themes, both CV downloads, desktop/mobile layouts and browser errors. See AGENTS.md for the complete contributor checklist.
 
-Verified 2026-10-28: Debt Tracker Google Play listing; Ghonestapps developer profile (HTTP 200); second developer profile, identified as oortech (HTTP 200); Geopaul94 GitHub profile (HTTP 200). LinkedIn blocked verification (HTTP 999) and is omitted. No unverified project repositories or store URLs were invented. The Google Play text and CV differ about cloud backup; the site follows the CV's backup/restore feature description and makes no absolute data-privacy claims. Download counts are omitted to avoid a stale metric.
+## Content
 
-All assets are local. The page content and CVs work offline when downloaded; external profile links and email/phone handlers require their respective services/apps. Theme preferences gracefully fall back if local storage is unavailable. No analytics, trackers or contact-form backend.
+The two supplied CVs are the factual sources. The design adapts the dark/purple style of https://amkrys.github.io/#about using Geo’s own content and implementation. A personal portrait remains optional; the hero uses initials. No analytics, trackers or contact-form backend.
